@@ -17,8 +17,6 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 // css压缩插件
 const CssMinimzerPlugin = require('css-minimizer-webpack-plugin');
 
-const IgnorePlugin = require('watch-ignore-webpack-plugin');
-
 // thread-loader预热
 ThreadLoader.warmup({}, ['babel-loader', 'ts-loader', 'less-loader']);
 function resolve(paths) { 
@@ -179,7 +177,6 @@ const config = {
             chunkFilename: 'static/css/[id].[fullhash].css'
         }),
         new CleanWebpackPlugin(),
-        new IgnorePlugin(/^\.\/locale$/, /moment$/)
     ],
     optimization: {
         minimizer: [
